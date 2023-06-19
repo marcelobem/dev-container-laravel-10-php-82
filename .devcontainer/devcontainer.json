@@ -1,6 +1,6 @@
 // https://aka.ms/devcontainer.json
 {
-	"name": "Existing Docker Compose (Extend)",
+	"name": "Empty Laravel 10",
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
@@ -9,14 +9,25 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				// "mikestead.dotenv",
+				"mikestead.dotenv",
 				// "amiralizadeh9480.laravel-extra-intellisense",
-				// "ryannaddy.laravel-artisan",
+				 "ryannaddy.laravel-artisan",
 				// "onecentlin.laravel5-snippets",
 				// "onecentlin.laravel-blade"
+				"DEVSENSE.phptools-vscode",
+				"GitHub.copilot",
+				//"emallin.phpunit"
 			],
 			"settings": {}
 		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+			"plugins": "git git-flow F-Sy-H zsh-autosuggestions zsh-completions",
+			"omzPlugins": "https://github.com/z-shell/F-Sy-H https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-completions"
+		},
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
 	},
 	"remoteUser": "sail",
 	"postCreateCommand": "chown -R 1000:1000 /var/www/html"
